@@ -1,0 +1,4 @@
+# listaDeTarefas
+Lista de tarefas utilizando JavaScript.
+![image](https://user-images.githubusercontent.com/59448111/171918869-221dc7c6-01f8-4bb0-8a70-2ea43f426c43.png)
+
