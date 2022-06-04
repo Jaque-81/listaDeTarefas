@@ -1,7 +1,7 @@
 let bd = []
 
 const getBD = () => JSON.parse(localStorage.getItem('todoList')) ?? []; //JSON.parse> transformando em ARRAY //se tiver alguma coisa na variavel todolist pega, senão '??'> se o getBD estiver vazio, passa um array que vai ser passado
-const setBD = bd => localStorage.setItem('todoList', JSON.stringify(bd));
+const setBD = bd => localStorage.setItem('todoList', JSON.stringify(bd));//JSON.stringfy transforma em string
 
 const criarTafera = (tarefa, status, indice) => {
   const item = document.createElement('label'); //cria um label
@@ -24,17 +24,17 @@ const limparTarefas = () => {
 
 const atualizarTela = () => {
   limparTarefas();
-  const bd = getBD();//leu o banco
-  bd.forEach((item, indice) => criarTafera(item.tarefa, item.status, indice));//adicionou um item
+  const bd = getBD();
+  bd.forEach((item, indice) => criarTafera(item.tarefa, item.status, indice));
 }
 
 const inserirItem = evento => {
-  const tecla = evento.key
-  const texto = evento.target.value
+  const tecla = evento.key;
+  const texto = evento.target.value;
   if (tecla === 'Enter') {
-    const bd = getBD();
-    bd.push({ tarefa: texto, status: '' })
-    setBD(bd);
+    const bd = getBD();//lendo o banco
+    bd.push({ tarefa: texto, status: '' });//adicionando ao banco
+    setBD(bd);//enviando banco
     atualizarTela();
     evento.target.value = '' ;//apaga a caixa
   }
