@@ -24,8 +24,8 @@ const limparTarefas = () => {
 
 const atualizarTela = () => {
   limparTarefas();
-  const bd = getBD();
-  bd.forEach((item, indice) => criarTafera(item.tarefa, item.status, indice))
+  const bd = getBD();//leu o banco
+  bd.forEach((item, indice) => criarTafera(item.tarefa, item.status, indice));//adicionou um item
 }
 
 const inserirItem = evento => {
